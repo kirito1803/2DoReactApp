@@ -1,0 +1,33 @@
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-90deg);
+    }
+    50% {
+        transform: rotate(-180deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.Descript {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background: none;
+    background-color: gray;
+
+    .Logo {
+        height: 50vh;
+        width: 50vh;
+        background-image: url('../../asset/pictures/logo.png');
+        background-repeat: no-repeat;
+        background-size:contain ;
+        // animation: rotate linear infinite 12s;
+    }
+}

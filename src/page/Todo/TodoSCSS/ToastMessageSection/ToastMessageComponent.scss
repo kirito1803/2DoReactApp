@@ -1,0 +1,99 @@
+@import '../../../../asset/GlobalVariables/colorsVariables.scss';
+
+// Animation keyframe
+@keyframes appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    to {
+        opacity: 0;
+    }
+}
+
+//  Size styling
+.Message-section {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.Toast-message {
+    display: flex;
+    height: 10vh;
+    width: 30vw;
+    margin-block: 1vh;
+    margin-right: 1vw;
+    border-radius: 1vw;
+    box-shadow: 0 0 7px 1px $blank-color;
+
+    & &__icon {
+        flex: 0.15;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4vh;
+    }
+
+    & &__content {
+        flex: 0.7;
+        padding: 5px 0
+    }
+
+    & &__title {
+        font-size: 2.5vh;
+    }
+
+    & &__delete {
+        flex: 0.15;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+}
+
+// Color styling
+.Toast-message {
+    &.add_1, &.add_2, &.add_3 {
+        background-color: $add-color;
+    }
+
+    &.finished_1, &.finished_2, &.finished_3 {
+        background-color: $finished-color;
+    }
+
+    &.delete_finished_1, &.delete_finished_2 {
+        background-color: $delete-finished-color;
+    }
+
+    &.delete_missed_1, &.delete_missed_2 {
+        background-color: $delete-missed-color;
+    }
+
+    &.delete_pending_1, &.delete_pending_2 {
+        background-color: $delete-pending-color;
+    }
+
+    &.marked {
+        background-color: $marked-color;
+    }
+
+
+}
+
+// Animate styling
+.Toast-message {
+    &.appear {
+        animation: appear linear 0.5s;
+    }
+
+    &.disappear {
+        animation: disappear linear 0.5s forwards;
+    }
+}

@@ -1,0 +1,28 @@
+.Todo {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      background-image: url('../../asset/pictures/appWallpaper.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  
+    &-body {
+      position: absolute;
+      width: 100%;
+      top: 13vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  

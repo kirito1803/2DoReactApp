@@ -1,0 +1,64 @@
+@import '../../../../asset/GlobalVariables/colorsVariables';
+
+.addNew {
+    display: flex;
+    flex: 1;
+    height: 17vh;
+    width: 60vw;
+    margin-block: 1vh;
+    padding: 1%;
+    background-color: rgba($black-color, 0.8);
+    border-radius: 2vh;
+
+    &__info {
+        flex: 0.8;
+        flex-direction: column;
+        height: 17vh;
+
+        .attribute-wrap {
+            display: flex;
+            justify-content: space-between;
+            height: 8vh;
+
+            .attribute {
+                display: flex;
+                flex: 0.5;
+                flex-direction: column;
+                margin: 0 0.5vw;
+
+                &__tag {
+                    flex: 1;
+                    height: 4vh;
+                    color: $white-color;
+                }
+
+                &__input {
+                    flex: 1;
+                }
+
+            }
+        }
+
+        .attribute-wrap:nth-child(1) .attribute:nth-child(1) .attribute__tag {
+            color: $primary-color;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+        }
+
+        .attribute-wrap:nth-child(2) .attribute{
+            flex: 1;
+        }
+    }
+
+    &__add {
+        display: flex;
+        flex: 0.2;
+        justify-content: center;
+        align-items: center;
+
+        &-btn {
+            height: 5vh;
+            width: 8vw;
+        }
+    }
+}

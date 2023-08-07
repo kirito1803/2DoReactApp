@@ -1,0 +1,23 @@
+TodoPage: {
+    AddSection { // Add & sort
+        Command {
+            AddNew
+            Sort
+        }
+    } 
+    BoardSection { // Display tasks 
+        Board { // black board cover
+            List { // render task list
+                task1 {
+                    counter // timing
+                },
+                task2 {
+                    counter
+                }
+            }
+        }
+    }
+    ToastMessageSection { // Display messages
+        Message
+    }
+}

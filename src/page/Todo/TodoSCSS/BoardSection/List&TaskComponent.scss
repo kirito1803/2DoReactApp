@@ -1,0 +1,172 @@
+@import '../../../../asset/GlobalVariables/colorsVariables';
+
+.App-board__list {
+    display: flex;
+    flex-direction: column;
+    height: calc(50vh - 50vh/100);
+    border-radius: 1vh;
+    list-style: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .App-board__item {
+      display: flex;
+      align-items: center;
+      height: 22vh;
+      padding: 0.5%;
+      color: $white-color;
+
+      i {
+        color: $white-color;
+      }
+
+      .TodoWrap {
+        display: flex;
+        flex: 0.93;
+        flex-direction: column;
+        height: 22vh;
+
+        .TodoNameSection {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          height: 5vh;
+
+          .TodoPriority {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            width: 5vh;
+            cursor: pointer;
+
+            i {
+              margin: 0 4px;
+              font-size: 3vh;
+            }
+
+            &.marked i {
+              color: yellow;
+            }
+
+            &.unmarked i {
+              color: $white-color;
+            }
+          }
+
+          .TodoName {
+            color: $primary-color;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+          }
+
+        }
+
+        .TodoDescribe {
+          height: 10vh;
+          margin-right: 1vw;
+        }
+
+        .TodoTime {
+          display: flex;
+          justify-content: space-between;
+
+          &-timeCount {
+            display: flex;
+
+            &__timeLeft {
+              min-width: 120px;
+              margin: 0 1vw;
+            }
+          }
+        }
+  
+        p {
+          height: 4vh;
+          color: $white-color;
+        }
+      }
+
+      .TodoButton {
+        display: flex;
+        flex: 0.07;
+        flex-direction: column;
+        align-items: center;
+        height: 22vh;
+
+        .StatusTodo {
+          display: flex;
+          flex: 0.5;
+          justify-content: center;
+          align-items: center;
+          height: 11vh;
+          width: 100%;
+          cursor: pointer;
+
+          i {
+            color: $white-color;
+            font-size: 25px;
+            line-height: 25px;
+          }
+        }
+
+        .DeleteTodo {
+          display: flex;
+          flex: 0.5;
+          justify-content: center;
+          align-items: center;
+          height: 11vh;
+          width: 100%;
+          cursor: pointer;
+    
+          i {
+            color: $white-color;
+            font-size: 30px;
+            line-height: 30px;
+          }
+        }
+      }
+
+      &:nth-child(odd) {
+        background-color: rgba($gray-color, 0.45);
+        border-radius: 1vh;
+        color: $black-color;
+
+
+        p {
+            height: 4vh;
+            color: $black-color;
+        }
+
+      }
+
+      &.missed {
+        .TodoName,
+        .TodoDescribe {
+          text-decoration: line-through;
+          text-decoration-color: $missed-line-color;
+          text-decoration-thickness: 3px;
+        }
+
+        .StatusTodo i{
+          color: $missed-line-color;
+        }
+      }
+
+      &.finished {
+        .TodoName,
+        .TodoDescribe {
+          text-decoration: line-through;
+          text-decoration-color: $finished-line-color;
+          text-decoration-thickness: 3px;
+        }
+
+        .StatusTodo i{
+          color: $finished-line-color;
+        }
+      }
+    }
+  }

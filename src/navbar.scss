@@ -1,0 +1,52 @@
+// Import color variables
+@import './asset/GlobalVariables/colorsVariables';
+
+.topnav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    height: 7vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba($black-color, 0.2);
+    z-index: 10;
+}
+
+.topnav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    height: 5.5vh;
+    width: 8vw;
+    margin: 0 0.5vw;
+    padding: 0 16px;
+    color: $white-color;
+    font-size: 17px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3vh;
+    transition: letter-spacing 0.3s;
+
+    p {
+        font-family: "Oswald", sans-serif;
+    }
+}
+
+.logout-btn {
+    position: absolute;
+    right: 0;
+}
+
+.topnav a:hover {
+    background-color: $white-color;
+    color: $black-color;
+    letter-spacing: 0.2vw;
+}
+
+.topnav a.active {
+    // background-color: $primary-color;
+    // color: $white-color;
+    border: solid $white-color;
+    border-radius: 2vw;
+}

@@ -1,0 +1,26 @@
+@import '../../../../asset/GlobalVariables/colorsVariables';
+
+.App_function {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 5vh;
+    width: 9vw;
+    margin: 0 2vw;
+
+    background-color: $primary-color;
+    border-radius: 4vw;
+
+
+    & .type-sort {
+        i {
+            font-size: 25px;
+            cursor: pointer;
+
+            &:nth-child(1) {
+                margin-right: 0.2vw;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,9 @@
+@import '../../../../asset/GlobalVariables/colorsVariables';
+
+.App-body__board{
+    height: 50vh;
+    width: 60vw;
+    padding: 1%;
+    background-color: rgba($black-color, 0.8);
+    border-radius: 2vh;
+}

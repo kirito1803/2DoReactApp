@@ -1,0 +1,214 @@
+@import '../../../asset/GlobalVariables/colorsVariables';
+
+.Slider {
+    position: absolute;
+    height: 70vh;
+    width: 55vw;
+
+    &__content {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        color: $white-color;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        // z-index: 10;
+
+        .login_section,
+        .register_section {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 27.5vw;
+            visibility: hidden;
+
+            & .header {
+                display: flex;
+                width: 15vw;
+                align-items: flex-end;
+                flex: 5;
+                font-size: 7vh;
+                line-height: 6vh;
+                margin-block: 10vh 5vh;
+                margin-inline: 4vw;
+            }
+        
+            & .message {
+                flex: 4;
+                width: 19vw;
+                font-size: 2.5vh;
+                margin-bottom: 3vh;
+                margin-inline: 4vw;
+            }
+        
+            & .change-form {
+                flex: 4;
+                margin-top: 2vh;
+                margin-inline: 4vw;
+        
+                button {
+                    height: 8vh;
+                    width: 15vw;
+                    margin-top: 1vh;
+                    color: $white-color;
+                    font-size: 3vh;
+                    background-color: transparent;
+                    border: solid $white-color;
+                    border-radius: 4vh;
+                    transition: width 0.3s, letter-spacing 0.3s;
+                    cursor: pointer;
+    
+                    i {
+                        margin-left: 0.5vw;
+                        transition: margin-left 0.3s;
+                    }
+        
+                    &:hover {
+                        width: 19vw;
+                        color: $black-color;
+                        background-color: $white-color;
+                        border-radius: 4.5vh;
+                        letter-spacing: 0.2vw;
+    
+                        i {
+                            margin-left: 2vw;
+                        }
+                    }
+                }
+            }
+        
+        }
+
+        .login_section.scrollOutLogin {
+            animation: scrollOutLogin 1.5s forwards;
+        }
+
+        .login_section.scrollInLogin {
+            animation: scrollInLogin 1.5s forwards;
+        }
+
+        .register_section.scrollInRegister {
+            animation: scrollInRegister 1.5s forwards;
+        }
+
+        .register_section.scrollOutRegister {
+            animation: scrollOutRegister 1.5s forwards;
+        }
+    }
+
+    &__picture {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 50%;
+        background-image: url("../../../asset/pictures/slider.jpg");
+        background-size: cover ;
+        background-position: 94% 50%;
+        border-top-right-radius: 2vw;
+        border-bottom-right-radius: 2vw;
+        // z-index: 10;
+
+        &.changeToLogin {
+            animation: slideToRight 1.5s forwards;
+        }
+
+        &.changeToRegister {
+            animation: slideToLeft 1.5s forwards;
+        }
+    }
+}
+
+// Animation Effects
+// for content
+@keyframes scrollOutLogin {
+    from {
+        // clip-path: polygon(0% 0%, 100%, 0%, 100% 100%, 0% 100%);
+        width: 27.5vw;
+        visibility: visible;
+        // z-index: 10;
+    }
+    to {
+        // clip-path: (0% 0%, 0.5% 0%, 0.5% 100% ,0% 100%);
+        width: 0;
+        visibility: hidden;
+        // z-index: 0;
+    }
+}
+
+@keyframes scrollInLogin {
+    from {
+        // clip-path: polygon(0% 0%, 0.5% 0%, 0.5% 100%, 0% 100%);
+        width: 0;
+        visibility: hidden;
+    }
+    to {
+        // clip-path: polygon(0% 0%, 100%, 0%, 100% 100%, 0% 100%);
+        width: 27.5vw;
+        visibility: visible;
+    }
+}
+
+@keyframes scrollInRegister {
+    from {
+        clip-path: polygon(99.9% 0%, 100% 0%, 100% 100%, 99.9% 100%);
+        visibility: hidden;
+    }
+    to {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        visibility: visible;
+    }
+}
+
+@keyframes scrollOutRegister {
+    from {
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        visibility: visible;
+        // z-index: 10;
+    }
+    to {
+        clip-path: polygon(99.9% 0%, 100% 0%, 100% 100%, 99.9% 100%);
+        visibility: hidden;
+        // z-index: 0;
+    }
+}
+
+// for picture
+@keyframes slideToLeft {
+    from {
+        right: 0%;
+        background-position: 94% 50%;
+        border-top-right-radius: 2vw;
+        border-bottom-right-radius: 2vw;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    to {
+        right: 50%;
+        background-position: 0% 50%;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 2vw;
+        border-bottom-left-radius: 2vw;
+    }
+}
+
+@keyframes slideToRight {
+    from {
+        right: 50%;
+        background-position: 0% 50%;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 2vw;
+        border-bottom-left-radius: 2vw;
+    }
+    to {
+        right: 0;
+        background-position: 94% 50%;
+        border-top-right-radius: 2vw;
+        border-bottom-right-radius: 2vw;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}

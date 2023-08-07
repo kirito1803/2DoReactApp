@@ -1,0 +1,182 @@
+@import '../../../asset/GlobalVariables/colorsVariables';
+
+.FormSection {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 55vw;
+    backdrop-filter: blur(3px);
+    background-color: rgba($color: $black-color, $alpha: 0.3);
+    border-radius: 2vw;
+}
+
+.form {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70vh;
+    width: 27.5vw;
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $white-color;
+        opacity: 0;
+
+        & .content {
+            font-size: 6vh;
+        }
+
+        & .paragraph {
+            font-size: 2.5vh;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        opacity: 0;
+
+        & .form__attribute {
+            position: relative;
+
+            i {
+                position: absolute;
+                left: 2.5vh;
+                top: calc(3.5vh - 1.75vh);
+                font-size: 3.5vh;
+                color: $white-color;
+            }
+
+            input {
+                height: 7vh;
+                width: 20vw;
+                margin-bottom:3vh;
+                color: $white-color;
+                font-size: 20px;
+                text-align: center;
+                background-color: transparent;
+                border: solid $white-color;
+                border-radius: 2.5vh;
+
+                &::placeholder {
+                    color: $white-color;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+
+        .form__btn {
+            height: 8vh;
+            width: 15vw;
+            font-size: 3vh;
+            border-radius: 4vh;
+            transition: width 0.3s, letter-spacing 0.3s;
+            cursor: pointer;
+
+            &:hover {
+                width: 20vw;
+                border-radius: 4.5vh;
+                letter-spacing: 0.3vw;
+            }
+        }
+    }
+
+    &.login-form {
+        & .form__header {
+            height: 25vh;
+
+            & .paragraph {
+                margin-top: 2vh;
+            }
+        }
+
+        & .form__body {
+            height: 20vh;
+        }
+
+        & .form__footer {
+            height: 25vh;
+        }
+    }
+
+    &.register-form {
+        margin-left: 27.5vw;
+        & .form__header {
+            height: 15vh;
+
+            & .content {
+                line-height: 6vh;
+            }
+
+            & .paragraph {
+                margin-top: 1vh;
+            }
+        }
+
+        & .form__body {
+            height: 42vh;
+        }
+
+        & .form__footer {
+            height: 13vh;
+        }
+    }
+
+    &.floatIn {
+        @for $i from 1 through 3 {
+            div:nth-child(#{$i}) {
+                animation: floatIn 1s forwards;
+                animation-delay: 0.2s + $i * 0.1s;
+            }
+        }
+    }
+
+    &.floatOut {
+        @for $i from 3 through 1 {
+            div:nth-child(#{$i}) {
+                animation: floatOut 0.3s forwards;
+                // animation-delay: ($i - 1) * 0.075s;
+            }
+        }
+    }
+}
+
+// Animation Effect
+@keyframes floatIn {
+    from {
+        transform: translateY(-15%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes floatOut {
+    from {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(20%);
+        opacity: 0;
+    }
+}
